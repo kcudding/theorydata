@@ -1,0 +1,518 @@
+---
+title: "Untitled"
+author: "Kim Cuddington"
+date: "25/04/2022"
+output: ioslides_presentation
+---
+---
+title: 'What are models for and <br>can we use them more effectively?'
+
+author: "Kim Cuddington (https://ecotheory.ca)"
+date: "16/05/2022"
+output: 
+  ioslides_presentation: 
+    keep_md: yes
+smaller: true
+css: quantbiotalk.css
+---
+<style>
+.forceBreak { -webkit-column-break-after: always; break-after: column; }
+</style>
+<style>
+p.caption {
+  font-size: 0.6em;
+}
+</style>
+<style>#margins > p {margin-top: -50px;} </style>
+<style>#margins2 > p {margin-top: -50px;} </style>
+
+```{r setup, include=FALSE}
+library(knitr)
+knitr::opts_chunk$set(echo = FALSE)
+```
+```{css echo = FALSE}
+body {line-height: .8;}
+h2 {margin-bottom: -50px;}
+```
+## Co-authors
+Warren Currie (https:)
+Debora
+Laura
+
+## Plan 
+  + Epistemology: a brief and idiosyncratic overview
+  + Mechanism and novel conditions
+  + How can we use models more effectively
+    - machine learning models: big data and mechanism (Maxent)
+    - mathematical models: mining models for data collection directions? (Laubiemier)
+    - statistical models: using mathematical models to understand alternative mechanisms (Quinte)
+ 
+
+# Epistemology: How do we gain knowledge
+<div class="notes">
+This is my *note*.
+
+- It can contain markdown
+- like this list
+
+</div>
+
+
+
+## Gaining knowledge in science
+- reality
+- data: a biased subset of reality
+- opinion: what we believe about reality
+
+<span style="color:red">$\rightarrow$<bold>Science</bold></span>: an attitude linking belief and data, whereby we do not, 
+at least in principle, maintain beliefs that are not supported by data 
+
+## Scientific Theory
+- We may refer to beliefs supported by data, or which at least
+do not always contradict data, as **theories**
+
+- We will like theories to have a few other properties such as: 
+    - logical consistency
+    - coherence with other scientific theories
+
+## Where do models fit in? 
+
+- Model: a representation of reality
+
+- A structure that: 
+    - embodies some of our beliefs about reality <font size="4"><br>e.g., predators negatively impact 
+prey populations $\frac{dN}{dt}=f(N)-g(N,P)$</br></font>
+    - mimics some aspect of data <font size="4"><br>e.g., linear regression $y_i=\beta_0+\beta_1x_i+\epsilon$</br></font>
+    - combines these two components (e.g., makes a statement about the expected pattern of data in light of theory)<font size="4"><br>predator consumption rate can be described as a type II functional response: $\frac{g(N,P)}{P}=\frac{aN}{N+N_0}$</font> 
+
+## Types of models  {.columns-2}
+
+
+- conceptual (e.g., a statement)
+<br/><br/> 
+
+- physical (e.g., lab experiment)
+<br/><br/> 
+
+- mathematical (e.g., ODE)
+<br/><br/>
+
+- data-driven (e.g., regression)
+<br/><br/>
+
+- computational (e.g., IBM)
+
+
+<p class="forceBreak"></p>
+    
+    
+    
+<font size="4"> "predators can positively impact prey"</font>
+<br/>
+<br/>
+```{r pressure, echo=FALSE, fig.align = 'left', fig.cap="Bell & Cuddington 2018", out.width = '35%'}
+knitr::include_graphics("laurawormscropped.jpg")
+```
+ $\frac{dN}{dt}=f(N,E)+g(N,P,E)$
+
+
+ $E(y_i)=β_0+f(x_i)+\epsilon$ 
+<br/><br/>
+
+
+```{r p2, echo=FALSE, fig.align = 'left', fig.cap="Cuddington & Yodzis 1999", out.width = '25%'}
+knitr::include_graphics("euclidIBM.png")
+```
+## Models
+
+
+
+## Characteristics of models 
+- Complex models $\neq$ closer to reality/truth <br>
+  (compare ariel photograph and road map... would it be better to turn left here?)
+-  Simple models $\neq$  reality/truth <br>
+  (fish stocks environmental variation?) 
+
+<font size="7"><span style="color:red">$\rightarrow$</span> Model $\neq$ reality</font>
+
+## models
+When constructing a model,one is constantly trading off the degree ofprecision, generality and realism (Levins 1966).It is not possible to include all details of a systemand still have a useful predictive tool. Forexample, a one-to-one scale map of a city mayinclude all details, but ceases to be useful as aguide for finding the nearest hotel. As a result,models are always false in some aspects of theirrepresentation of a system, and there is no onecorrect model that links a theory to a particularsystem (Fig. 1).
+
+<font size="7"><span style="color:red">$\rightarrow$</span> Model $\neq$ theory </font>
+
+<font size="7"><span style="color:red">$\rightarrow$</span> Theory $\neq$ Model $\neq$ theory </font>
+
+
+## Why do we need models then?
+
+1. Explanation 
+2. Prediction
+
+
+while we attempt to make do without it, 
+both of these functions require mechanism  
+
+## All models can include phenomological or mechanistic components or both
+
+Valle et al. (2009) found that alternate modelingassumptions in the forest stand simulation modelSYMFOR can account for 66–97%of the variancein predicted stand dynamics. While the authorswere able to complete this comparison ofdiffering models formulations for SYMFOR, theynote that it may be very difficult to do the samefor exceedingly complex models.
+
+# The role of mechanism in modelling
+
+## Data-driven models by themselves, are generally not mechanistic <br>
+- I'm including here standard statistical models (both frequentist and Bayesian), as well as machine learning models
+- we might look for a relationship
+
+Because these models arebased on causal mechanisms rather than correla-tion, our confidence in extrapolating beyondknown data is enhanced. Of course, there isalways uncertainty about how an ecologicalprocess will interact with novel global changeconditions. 
+
+However, underconditions of global change, models based on thepast behaviour of a system may not be suitablefor projection forward (Williams et al. 2007,Lawler et al. 2010).
+
+## ??Models without mechanism provide no useful explanatory information
+
+
+Predators negatively impact their prey 
+
+- how?
+
+- fear dynamics?
+- benefitting competitors
+
+- when, always?
+- is that true for generalist predators and specialists?
+- what about predators that eat prey competitors?
+- 
+- what about predators that modify the environment?
+
+Without mechanism, we can't answer these questions, and that's a problem, since if we get the answer wrong, we might take an action that has the opposite of the desired effect
+
+## Mathmatical models and mechanism
+
+- starting from $\frac{dN}{dt}=f(N)-g(N,P)$ is no different than starting from $y_i=\beta_0 + f(x_i)+\epsilon$ in terms of mechanism
+
+- mechanism requires an explanation or idea about the predators negatively impact net prey population growth rate (what is g(N, P)?)
+
+-actually, I exaggerate, there's a little bit of something here, that is not obvious in the statistical model, we require g(N,P) is large or similar to f(N) to see a negative impact
+
+-we can leave g(N,P) to be a mere description of phenomena, or we can examine natural data closely, devise experiments, or reason logically to develop ideas about mechanism (e.g., Holling REF)
+
+- once the function is specificed, the model can also suggest expected behaviour for given conditions within the domain of application (this is a two-species model!, well it might work okay for agricultural fields), or to make guesses outside of this domain (true, but the interaction strength between these two species is really large compared to everything else) 
+
+- one advantage tho, the model can include a variety of functional forms that pertain to different mechanisms... we have to stop forgetting this!!
+
+i.e., Lotka-Volterra pred-prey model ($\frac{dN}{dt}=rN-aNP$), Rosenzweig-McArthur pred-prey model ($\frac{dN}{dt}=rN(1-\frac{N}{K})-\frac{aNP}{N+N_0}$)
+
+-yes, these model are false
+
+## Claim 1: Mathematical models need to focus on mechanism rather than classification
+
+- more generally, mathematical models often tend to appeal to classifications of species interactions, a platonic ideal if you will, which more or may not exist </br>
+e.g., a "predator-prey" model
+
+- these models have dubious explanatory value outside of the examplar classification system, 
+
+- "predator-prey" model supposes there is a class of predator-prey interactions that have general properities accross species, systems and time that are related to the outcome of the interaction (-/+)
+
+- as I will discuss, the net effect of pairwise species interactions is not fixed. 
+- Nor indeed is the a fixed net effect of the interaction of a species with its environment or community etc, 
+
+$\leftarrow$ this is the first reason I don't think this is a helpful approaoch missing from machine learning approaches, their oversimplified assumptions and extremely specific nature prohibit the universal predictions achievable by machine learning." Baker et al. (2018). Mechanistic models versus machine learning, a fight worth fighting for the biological community? Biology Letters, 14(5), 20170660. https://doi.org/10.1098/rsbl.2017.0660
+
+Any attempt by machine learning technologies to predict individual patient outcomes from past observations using a patient database is potentially able to identify which of existing treatments is most adequate, but intrinsically unable to suggest new treatment protocols or to provide accurate predictions for new treatments. In the literature, this aspect is referred as the ‘inductive capability’ of the learning algorithms (from past data, one can identify patterns happening in the data). This is vastly different from the deductive capability of mechanistic models, in which the combination of logical (mechanistic) principles enables extrapolation to predictions about behaviours not present in the original data [4]. In short, mechanistic models can provide insights and understanding into the mechanistic functions of treatments, and these are necessary to overcome the limitations of machine learning predictions
+
+I haven't seen an example of "universal predictions achievable by machine learning" in ecology but I am certainly of the mind that both approaches are useful IN THEIR DOMAIN OF APPLICATION
+
+## Mecahnsitic mathematical models
+
+- simplified mathematical formulations of causal mechanisms
+- , and developing and/or using analytical tools to determine whether the range of possible input –output behaviours predicted by the model, and hence the causal hypotheses, are consistent with experimental observations.
+
+# Other have the opposite view
+"While mechanistic models provide the causality
+
+## Example: Rusty crayfish and endangered Hine's emerald
+- instead of classifying phenomena, we should to focus on incorporating mechanisms, which **may** generalize accross species, systems and time e.g., $\frac{dN}{dt}=f(N,E)+g(N,P,E)$ where g(N,P,E) could be positive or negative
+
+(e.g., invasive rusty crayfish eat endangered Hine's emerald dragonfly larvae)
+
+```{r, out.width = "50%",fig.align = 'center'}
+include_graphics("hinescrayfish.png")
+```
+
+## Models without mechanism cannot reliably extrapolate to novel conditions
+
+
+## Data-driven models usually lack mechanism
+- statistical and machine-learning models can only make predictions that relate to patterns within the data supplied
+
+
+
+```{r, warning=FALSE}
+library(DiagrammeR)
+mermaid("
+graph TD
+  A(Explanation)
+  B(Prediction)
+  C(Predict under novel conditions)
+
+  
+  A-->C
+  B-->C
+  
+ style B fill:#B6E6E6;
+ style C fill:#B6E6E6;
+
+",width="100%",height="100%")
+
+#subgraph <-transform_to_subgraph_ws(thdat[A,B])
+
+
+
+```
+
+<div class="columns-2">
+
+
+</div>
+
+
+
+# can we use data-driven models to develop mechanistic explanations?
+## Maxent algorithm
+<div style="float: left; width: 80%;">
+- a machine learning method, which iteratively builds multiple models. It has two main components:
+
+1. Entropy: the model is calibrated to find the distribution that is most spread out, or closest to uniform throughout the study region.
+
+2. Constraints: the rules that constrain the predicted distribution. These rules are based on the values of the environmental variables (called features) of the locations where the species has been observed. 
+
+</div>
+<div style="float: right; width: 20%;">
+
+```{r, out.width = "40%",fig.align = 'right'}
+include_graphics("Maxent.png")
+```
+
+</div>
+## Maxent modelling for giant hogweed distribution
+
+- use experimental data to suggest candidate predictors: may require cold stratification, refer moist sites
+
+- intial Maxent model to find strong candidates and eliminate correlated predictors (normally we would leave these in and assume that the penalization would takec are of correlation)
+
+```{r, out.width = "100%",fig.align = 'center'}
+include_graphics("tblehogweed.png")
+```
+
+## Develop data-driven models, with an eye to mechanism
+- constraint Maxent functions to forms that mimic standard ecothermic relationships (again, these are data-based)
+- train on a global dataset, test in inside and outside of training data range
+
+## Data-driven models which suggest mechanism {#margins} 
+- final set of simple maxent models, and related statistical model.... 
+
+```{r, out.width = "80%",fig.align = 'center'}
+include_graphics("modelshogweed.png")
+```
+<font size="2"><div align="center">[Cuddington et al. (2022)](https://doi.org/10.1007/s10530-021-02645-x)</div></font>`
+
+## Let's use data-driven modelling to identify mechanism
+- giant hogweed: the beginnings of a mechanistic model: 
+    - requirements for cold seed stratification temperatures to break dormancy
+    - with development delays above this range 
+- does require constraints, previous experiment, and some logical connections
+
+
+# can we use mechanistic models to better understand data?
+
+## Regime shifts in bistable systems {#margins2}
+- a "sudden" change in state, e.g., Scheffer (2001) $\frac{dx}{dt}=\frac{hx^\rho}{x^\rho+c}-b x+a$
+- lake system moves from
+    phytoplankton-dominated, eutrophic green water state to
+    macrophyte-dominated, oligotrophic state
+```{r, out.width = "70%",fig.align='center'}
+include_graphics("schefferbifur.png")
+```
+<font size="2"><div align="center">[Francis et al. (2021)](https://www.nature.com/articles/s41559-020-01365-0)</div></font>`
+
+## Two ways to get a regime shift
+1. Erode stability of one eq'm, or 
+2. Push system to second stable basin with a disturbance
+
+```{r, out.width = "50%",fig.show='hold',fig.align='default'}
+include_graphics(c("schefferschematic.png", "schefferdisturb.png"))
+```
+
+## Bay of Quinte
+- history previously eutrophic
+- invaded by zebra mussels in 1994
+- meostrophic following this
+
+```{r, out.width = "40%",fig.cap="Bay of Quinte before and after mussel invasion", fig.show='hold',fig.align='default'}
+include_graphics(c("turbid.png", "clear.png"))
+```
+
+## explanation: 
+
+
+
+Before zebra mussel invasion / after 
+Statndard idea: there was a regime shift vs there wsan;t
+
+
+## Wait... is that actually what a mechanistic model predicts?
+-asymptotitic vs transient dynamics predicted by models
+
+```{r, out.width = "70%",fig.align = 'center'}
+include_graphics("schefferghost.png")
+```
+
+## Long transients in a regime shift model
+
+```{r, out.width = "70%",fig.align = 'center'}
+include_graphics("transbox.png")
+```
+
+there was a regime shift vs there was slow change (i.e. the system does not have bistable dynamics)
+
+
+- alternative explanations:
+  1. there was a regime shift to a 2nd stable state cause by the distrubance of the zebra mussel invaions
+  2. there was a long transient following the erosian of the the stability of the eutrophic state beacuase of a lingering ghost attractor
+  3. also...there was slow change (i.e. the system does not have bistable dynamics)
+
+Before zebra mussel invasion / after 
+
+## Examine alternatives using data-driven models 
+- handling complicated statistical analyses<br>
+(e.g., looking at climate change impacts)
+
+
+## Probably a long transient, probably not zebra mussesl
+
+
+
+## Alternate explanations for the same observation WITH THE SAME MODEL
+
+-the system DOES have bistable dyanmics but either
+1. the parameter values are in a regime such that there is no sudden change
+2. there parameter values DO allow sudden change, but there is a long tranisent before that change
+
+
+
+
+
+
+
+## Laubmimer
+
+# can we use physical models to better understand theory?
+
+
+## Prediction based on explanation: Mechanistic models
+
+-often mathematical, but need not be so.
+
+# Case studies in connecting theory and data
+## Moving from theory to prediction?
+```{r, warning=FALSE}
+library(DiagrammeR)
+mermaid("
+graph LR
+  A(observe)
+  B(theorize)
+  C(make predictions)
+  D(collect data)
+  E(test prediction 1)
+  G(test prediction 2)
+  H(test predition 3)
+  F(modify or reject current theory)
+  I(accept current theory)
+  
+  A-->B
+  B-->C
+  C-->D
+  D-->E
+  D-->G
+  D-->H
+  E-->|Reject| F
+  G-->|Reject|F
+  H-->|accept|I
+  F-->C
+
+ style B fill:#B6E6E6;
+ style C fill:#B6E6E6;
+ style F fill:#B6E6E6;
+ style I fill:#B6E6E6;
+")
+
+#subgraph <-transform_to_subgraph_ws(thdat[A,B])
+
+```
+
+##
+ Environmental stochasticity or varia-
+tion in parameter values might lead to amplification of disturbances [24] or differences in expected
+dynamics. For example, varying parameter values in a differential equation model can determine
+whether a monotonic or oscillating approach to a stable equilibrium is expected (Box 1). There-
+fore, uncertainty in parameter values will lead to uncertainty about which dynamic behaviors
+are most likely. 
+
+
+
+## Open Science
+
+- providing data, source code and dynamic documents to make work completely reproducible 
+- Note this document and figures provided at https:/github.com/quantitative-biology/talk
+
+
+
+
+```{r, out.width = "60%", fig.align = 'center'}
+include_graphics("https://imgs.xkcd.com/comics/how_it_works.png")
+```
+<font size="2"><div align="center">https://xkcd.com/385/ </div></font>
+
+
+## Acknowledgements
+We thank Luwen Chang and Matthew Zhou for their amazing learning curves, and subsequent help coding up the modules. The eCampusOntario grant also funded several students to evaluate an early version of the materials. Lina Aragon Baquero, Lauren Banks, Madison Brook, Jacob Burbank, Nicole Gauvreau and Aranksha Dilip Thakor provided valuable feedback.
+
+The Git and GitHub module builds upon workshop materials that were originally developed with Chris Grandin (DFO), who AME also thanks for assistance with the module.
+
+
+## Funding
+
+The Quantitative Biology in Life Science Graduate Programs workshop from which this work arose which was supported by funding from the Burroughs Wellcome Fund, from National Science Foundation Award DBI-1300426 for NIMBioS, with additional support from the University of Tennessee. The Workshop arose from a partnership between NIMBioS and the Southeast Center for Mathematics and Biology (SCMB). 
+
+
+Support for the development of online training materials comes from the Government of Ontario through a grant from eCampusOntario, and the support of Fisheries and Oceans Canada and the Faculty of Science, University of Waterloo (https://www.quantitative-biology.ca)
+
+## Other references
+<font size="1">Bandura A. 1997. Self-self Efficacy: The Exercise of Control. Freeman, New York.</font>
+<br><font size="1">Charleston L, Leon R. 2016. Constructing self-efficacy in STEM graduate education. Journal for Multicultural Education 10: 152–166.</font>
+<br><font size="1">Chen Musgrove MM, Schussler EE. 2020. The Ph.D. panic: examining the relationships among teaching anxiety, teaching self-efficacy, and coping in biology graduate teaching assistants (GTAs). bioRxiv DOI 10.1101/2020.02.07.938597.</font>
+<br><font size="1">Eaton CD, Highlander HC. 2017. The case for biocalculus: design, retention, and student performance. CBE—Life Sciences Education 16: ar25.</font>
+<br><font size="1">Flanagan K, Einarson J. 2017. Gender, math confidence, and grit: relationships with quan- titative skills and performance in an undergraduate biology course. CBE—Life Sciences Education 16: ar47.</font>
+<br><font size="1">Johnston L, et al. 2019. A graduate student-led participatory live-coding quantitative methods course in R: experiences on initiating, developing, and teaching. Journal of Open Source Education 2: 49.</font>
+<br><font size="1">National Research Council et al. 2003. BIO2010: Transforming undergraduate education for future research biologists. National Academies Press.</font>
+<br><font size="1">Pajares F, Miller MD. 1994. Role of self-efficacy and self-concept beliefs in mathematical problem solving: a path analysis. Journal of Educational Psychology 86: 193.</font>
+<br><font size="1">Ward-Penny R, Johnston-Wilder S, Lee C. 2011. Exit interviews: undergraduates who leave mathematics behind. For the Learning of Mathematics 31: 21–26.</font>
+<br><font size="1">Williams JJ, et al. 2019. Barriers to integration of bioinformatics into undergraduate life sciences education: a national study of US life sciences faculty uncover significant barriers to integrating bioinformatics into undergraduate instruction. PloS one 14: e0224288.</font>
+
+## What do you think?
+
+- I'm still proofreading
+- always want your feedback (https://www.quantitative-biology.ca/index.html#feedback)
+
+
+## Why
+
+```{r, test, dev='png'}
+plot(1)
+```
+
+## Second slide
+
+![](`r knitr::fig_chunk('test', 'png')`)
+
+##
+<dev class="centered">
+
