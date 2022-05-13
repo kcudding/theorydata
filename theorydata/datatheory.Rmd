@@ -342,7 +342,8 @@ include_graphics(c("schefferschematic.png", "schefferdisturb.png"))
 ```
 
 ## Bay of Quinte
-- history previously eutrophic
+- history of being increasingly eutrophic
+- phosophorus controls inplemented 1978
 - invaded by zebra mussels in 1994
 - meostrophic following this
 
@@ -350,54 +351,131 @@ include_graphics(c("schefferschematic.png", "schefferdisturb.png"))
 include_graphics(c("turbid.png", "clear.png"))
 ```
 
-## explanation: 
+## Standard explanation: Disturbance shift to new stable state 
+
+"In the mid-1990s, zebra and quagga mussels (Dreissena spp.) invaded the area, **dramatically changing the water clarity because of the filter-feeding capacity.**"
+<br/>
+
+<font size="4">Bay of Quinte remedial action plant (2017)</font>
 
 
 
-Before zebra mussel invasion / after 
-Statndard idea: there was a regime shift vs there wsan;t
+## Wait... is that all the mechanistic model predicts?
+-asymptotic vs transient dynamics predicted by models
 
-
-## Wait... is that actually what a mechanistic model predicts?
--asymptotitic vs transient dynamics predicted by models
 
 ```{r, out.width = "70%",fig.align = 'center'}
 include_graphics("schefferghost.png")
 ```
 
 ## Long transients in a regime shift model
-
+-long transients can be a quite common prediction
 ```{r, out.width = "70%",fig.align = 'center'}
 include_graphics("transbox.png")
 ```
 
-there was a regime shift vs there was slow change (i.e. the system does not have bistable dynamics)
+
+## Alternative explanations for change in Bay of Quinte
+- all of which arise from the SAME mechanistic model
+
+  1. a regime shift to a 2nd stable state cause by the disturbance of the zebra mussel invasions
+  2. a long transient following the erosion of the the stability of the eutrophic state because of a lingering ghost attractor
+  3. there was just a slow change in phosphorus (i.e. the system does not have bistable dynamics)
+
+## Examine alternatives using data-driven models:  
+- Linear breakpoint analysis <font size="3">$E(y_i)=β_0+break_i+x_i$</font>
+- Nonlinear analysis: Use generalized additive model (GAM: <font size="3">$E(y_i)=β_0+f(x_i)$</font>), and examine the first derivative of fitted smooth to find periods of rapid change
+
+<div style="float: left; width: 40%;">
+<font size="2">Simulated data from Scheffer model (2001) where the high turbidity state, which is the initial condition, is no longer stable, showing the timeseries (points), fitted GAM model (black line) and 95% credible interval (green lines) for three different levels of additive noise (a-c), then taking the first derivative (d-f) of fitted GAM (black line), with simultaneous confidence intervals (green lines). Where the derivative significantly deviates from zero, we have a period of rapid change. </font></div>
+
+<div style="float: right; width: 60%;">
+```{r, out.width = "90%", fig.align = 'center'}
+include_graphics("schaefferexap.jpeg")
+```
+<font size="2"><div align="center">[Currie & Cuddington, in prep]()</div></font>`
+</div>
 
 
-- alternative explanations:
-  1. there was a regime shift to a 2nd stable state cause by the distrubance of the zebra mussel invaions
-  2. there was a long transient following the erosian of the the stability of the eutrophic state beacuase of a lingering ghost attractor
-  3. also...there was slow change (i.e. the system does not have bistable dynamics)
+## 1. examine the dynamics of a mechanistic driver<br/> (phosphorus)
 
-Before zebra mussel invasion / after 
+<div style="float: left; width: 20%;">
+- rapid response to management in the 70s 
+- slow change after that
+</div>
 
-## Examine alternatives using data-driven models 
-- handling complicated statistical analyses<br>
-(e.g., looking at climate change impacts)
+<div style="float: right; width: 45%;">
+```{r, out.width = "100%", fig.align = 'center'}
+include_graphics(c("TPgamApr08.jpeg"))
+```
+</div>
+
+<div style="float: right; width: 35%;">
+```{r, out.width = "60%", fig.align = 'center'}
+include_graphics(c("TPbreak.jpeg"))
+```
 
 
-## Probably a long transient, probably not zebra mussesl
+<font size="2"><div align="right">[Currie & Cuddington, in prep]()</div></font>`
+</div>
+
+## 2. examine the dynamics of the disturbance <br/>(zebra mussels) 
+<div style="float: left; width: 30%;">
+
+- mussel veligers first detected in 1994
+- very low densities
+</div>
+<div style="float: right; width: 70%;">
+```{r, out.width = "80%", fig.align = 'center'}
+include_graphics("zoobar.png")
+```
+<font size="2"><div align="center">[Currie & Cuddington, in prep]()</div></font>`
+</div>
+
+## 3. examine the dynamics of the response <br/>(water clarity) {#margins}
+<div style="float: left; width: 40%;">
+- linear breakpoint model <font size="2">$E(light_{i,s}) = \beta_s+break period_{i,s} + year_{i,s} + TP_i$</font>
+- response to phosphorus controls in the 70s  at Belleville
+- maybe rapid change after mussels at Hay Bay?
+
+</div>
+<div style="float: right; width: 60%;">
+```{r, out.width = "50%",fig.show='hold',fig.align='center'}
+include_graphics(c("lightbreakwgt.jpeg" ))
+```
+<font size="2"><div align="center">[Currie & Cuddington, in prep]()</div></font>`
+
+
+## 3. examine the dynamics of the response <br/>(water clarity)
+<div style="float: left; width: 40%;">
+
+- nonlinear analysis : <font size="2">$E(light_{i,s})=β_s+f(year_{i,s})+f(TP_i)$</font>
+- suggests rapid change at Belleville and Hay Bay
+- rapid change magnitude becomes pretty small when we control for concurvity in phosphorus impacts
+
+</div>
+<div style="float: right; width: 60%;">
+```{r, out.width = "70%",fig.show='hold',fig.align='center'}
+include_graphics(c("lightgamApr11.jpeg", "gamresidlightApr05.jpeg" ))
+```
+<font size="2"><div align="center">[Currie & Cuddington, in prep]()</div></font>`
 
 
 
-## Alternate explanations for the same observation WITH THE SAME MODEL
+## Conclusion: Probably just slow change and a small disturbance
 
--the system DOES have bistable dyanmics but either
+- however, it could be the system DOES have bistable dynamics but either
 1. the parameter values are in a regime such that there is no sudden change
-2. there parameter values DO allow sudden change, but there is a long tranisent before that change
+2. the parameter values DO allow sudden change, but there is a long transient before that change
+
+- in either case, Zebra mussels only likely to contribute as a small scale disturbance
 
 
+## Lessons for using models from the Quinte project
 
+1. there are all kinds of dynamic behaviours predicted by even very simple mechanistic models (e.g., transients can be very long)
+3. it is going to be tough to determine mechanism in light of this variety of behaviour...but we NEED to because of management question
+4. support analysis with a variety of data-driven models at different temporal and spatial scales
 
 
 
