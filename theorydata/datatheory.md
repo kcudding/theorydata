@@ -42,14 +42,11 @@ font-style: italic;
 
 
 
-```{r setup, include=FALSE}
-library(knitr)
-knitr::opts_chunk$set(echo = FALSE)
-```
-```{css echo = FALSE}
+
+<style type="text/css">
 body {line-height: .8;}
 h2 {margin-bottom: -50px;}
-```
+</style>
 ## Co-authors
 Warren Currie (https:)
 Debora
@@ -126,9 +123,10 @@ prey populations $\frac{dN}{dt}=f(N)-g(N,P)$</br></font>
 <font size="4"> "predators can positively impact prey"</font>
 <br/>
 <br/>
-```{r pressure, echo=FALSE, fig.align = 'left', fig.cap="Bell & Cuddington 2018", out.width = '35%'}
-knitr::include_graphics("laurawormscropped.jpg")
-```
+<div class="figure" style="text-align: left">
+<img src="laurawormscropped.jpg" alt="Bell &amp; Cuddington 2018" width="35%" />
+<p class="caption">Bell & Cuddington 2018</p>
+</div>
  $\frac{dN}{dt}=f(N,E)+g(N,P,E)$
 
 
@@ -136,9 +134,10 @@ knitr::include_graphics("laurawormscropped.jpg")
 <br/><br/>
 
 
-```{r p2, echo=FALSE, fig.align = 'left', fig.cap="Cuddington & Yodzis 1999", out.width = '25%'}
-knitr::include_graphics("euclidIBM.png")
-```
+<div class="figure" style="text-align: left">
+<img src="euclidIBM.png" alt="Cuddington &amp; Yodzis 1999" width="25%" />
+<p class="caption">Cuddington & Yodzis 1999</p>
+</div>
 ## Characteristics of models 
 - trade off precision, generality and realism (Levins 1966).
 - is not possible to include all details of a system and still have a useful tool (e.g., a one-to-one scale map of a city may include all details but is useless as a guide to finding your hotel)
@@ -166,9 +165,10 @@ Lewis Carroll - The Complete Illustrated Works. Gramercy Books, New York (1982)<
 </div>
 
 <div style="float: right; width: 50%;">
-```{r p4, echo=FALSE, fig.align = 'center', fig.cap="Mayer et al. 2010", out.width = '65%'}
-knitr::include_graphics("elephant.jpeg")
-```
+<div class="figure" style="text-align: center">
+<img src="elephant.jpeg" alt="Mayer et al. 2010" width="65%" />
+<p class="caption">Mayer et al. 2010</p>
+</div>
 </div>
 
 ## Overfitting
@@ -176,10 +176,10 @@ knitr::include_graphics("elephant.jpeg")
 - No not really Overfitting occurs when data-driven model tries to cover all the data points  in the dataset
 - as a result, the model starts caching noise and inaccurate values present in the dataset, and all these factors reduce the efficiency and accuracy of the model
 
-```{r p3, echo=FALSE,fig.align = 'center',fig.cap="Lever et al. 2016", out.width = '80%'}
-knitr::include_graphics("overfit.jpg")
-
-```
+<div class="figure" style="text-align: center">
+<img src="overfit.jpg" alt="Lever et al. 2016" width="80%" />
+<p class="caption">Lever et al. 2016</p>
+</div>
 
 
 
@@ -292,9 +292,7 @@ I haven't seen an example of "universal predictions achievable by machine learni
 
 (e.g., invasive rusty crayfish eat endangered Hine's emerald dragonfly larvae)
 
-```{r, out.width = "50%",fig.align = 'center'}
-include_graphics("hinescrayfish.png")
-```
+<img src="hinescrayfish.png" width="50%" style="display: block; margin: auto;" />
 
 ## Models without mechanism cannot reliably extrapolate to novel conditions
 
@@ -304,27 +302,10 @@ include_graphics("hinescrayfish.png")
 
 
 
-```{r, warning=FALSE}
-library(DiagrammeR)
-mermaid("
-graph TD
-  A(Explanation)
-  B(Prediction)
-  C(Predict under novel conditions)
 
-  
-  A-->C
-  B-->C
-  
- style B fill:#B6E6E6;
- style C fill:#B6E6E6;
-
-",width="100%",height="100%")
-
-#subgraph <-transform_to_subgraph_ws(thdat[A,B])
-
-
-
+```{=html}
+<div id="htmlwidget-fdb6950ba1ee23a40834" style="width:100%;height:100%;" class="DiagrammeR html-widget"></div>
+<script type="application/json" data-for="htmlwidget-fdb6950ba1ee23a40834">{"x":{"diagram":"\ngraph TD\n  A(Explanation)\n  B(Prediction)\n  C(Predict under novel conditions)\n\n  \n  A-->C\n  B-->C\n  \n style B fill:#B6E6E6;\n style C fill:#B6E6E6;\n\n"},"evals":[],"jsHooks":[]}</script>
 ```
 
 <div class="columns-2">
@@ -346,9 +327,7 @@ graph TD
 </div>
 <div style="float: right; width: 20%;">
 
-```{r, out.width = "40%",fig.align = 'right'}
-include_graphics("Maxent.png")
-```
+<img src="Maxent.png" width="40%" style="display: block; margin: auto 0 auto auto;" />
 
 </div>
 ## Maxent modelling for giant hogweed distribution
@@ -357,9 +336,7 @@ include_graphics("Maxent.png")
 
 - intial Maxent model to find strong candidates and eliminate correlated predictors (normally we would leave these in and assume that the penalization would takec are of correlation)
 
-```{r, out.width = "100%",fig.align = 'center'}
-include_graphics("tblehogweed.png")
-```
+<img src="tblehogweed.png" width="100%" style="display: block; margin: auto;" />
 
 ## Develop data-driven models, with an eye to mechanism
 - constraint Maxent functions to forms that mimic standard ecothermic relationships (again, these are data-based)
@@ -368,9 +345,7 @@ include_graphics("tblehogweed.png")
 ## Data-driven models which suggest mechanism {#margins} 
 - final set of simple maxent models, and related statistical model.... 
 
-```{r, out.width = "80%",fig.align = 'center'}
-include_graphics("modelshogweed.png")
-```
+<img src="modelshogweed.png" width="80%" style="display: block; margin: auto;" />
 <font size="2"><div align="center">[Cuddington et al. (2022)](https://doi.org/10.1007/s10530-021-02645-x)</div></font>`
 
 ## Let's use data-driven modelling to identify mechanism
@@ -387,25 +362,19 @@ include_graphics("modelshogweed.png")
 - lake system moves from
     phytoplankton-dominated, eutrophic green water state to
     macrophyte-dominated, oligotrophic state
-```{r, out.width = "70%",fig.align='center'}
-include_graphics("schefferbifur.png")
-```
+<img src="schefferbifur.png" width="70%" style="display: block; margin: auto;" />
 <font size="2"><div align="center">[Francis et al. (2021)](https://www.nature.com/articles/s41559-020-01365-0)</div></font>`
 
 ## Two ways to get a regime shift
 1. Erode stability of one eq'm, or 
 2. Push system to second stable basin with a disturbance
 
-```{r, out.width = "50%",fig.show='hold',fig.align='default'}
-include_graphics(c("schefferschematic.png", "schefferdisturb.png"))
-```
+<img src="schefferschematic.png" width="50%" /><img src="schefferdisturb.png" width="50%" />
 ## Wait... is that all the mechanistic model predicts?
 -asymptotic vs transient dynamics predicted by models
 
 
-```{r, out.width = "70%",fig.align = 'center'}
-include_graphics("schefferghost.png")
-```
+<img src="schefferghost.png" width="70%" style="display: block; margin: auto;" />
 
 ## Bay of Quinte
 - history of being increasingly eutrophic
@@ -413,9 +382,10 @@ include_graphics("schefferghost.png")
 - invaded by zebra mussels in 1994
 - meostrophic following this
 
-```{r, out.width = "40%",fig.cap="Bay of Quinte before and after mussel invasion", fig.show='hold',fig.align='default'}
-include_graphics(c("turbid.png", "clear.png"))
-```
+<div class="figure">
+<img src="turbid.png" alt="Bay of Quinte before and after mussel invasion" width="40%" /><img src="clear.png" alt="Bay of Quinte before and after mussel invasion" width="40%" />
+<p class="caption">Bay of Quinte before and after mussel invasion</p>
+</div>
 
 ## Standard explanation: Disturbance shift to new stable state 
 
@@ -429,9 +399,7 @@ include_graphics(c("turbid.png", "clear.png"))
 
 ## Long transients in a regime shift model
 -long transients can be a quite common prediction
-```{r, out.width = "70%",fig.align = 'center'}
-include_graphics("transbox.png")
-```
+<img src="transbox.png" width="70%" style="display: block; margin: auto;" />
 <font size="2"><div align="center">[Currie & Cuddington, in prep]()</div></font>`
 </div>
 
@@ -450,9 +418,7 @@ include_graphics("transbox.png")
 <font size="2">Simulated data from Scheffer model (2001) where the high turbidity state, which is the initial condition, is no longer stable, showing the timeseries (points), fitted GAM model (black line) and 95% credible interval (green lines) for three different levels of additive noise (a-c), then taking the first derivative (d-f) of fitted GAM (black line), with simultaneous confidence intervals (green lines). Where the derivative significantly deviates from zero, we have a period of rapid change. </font></div>
 
 <div style="float: right; width: 60%;">
-```{r, out.width = "90%", fig.align = 'center'}
-include_graphics("schaefferexap.jpeg")
-```
+<img src="schaefferexap.jpeg" width="90%" style="display: block; margin: auto;" />
 <font size="2"><div align="center">[Currie & Cuddington, in prep]()</div></font>`
 </div>
 
@@ -465,15 +431,11 @@ include_graphics("schaefferexap.jpeg")
 </div>
 
 <div style="float: right; width: 45%;">
-```{r, out.width = "100%", fig.align = 'center'}
-include_graphics(c("TPgamApr08.jpeg"))
-```
+<img src="TPgamApr08.jpeg" width="100%" style="display: block; margin: auto;" />
 </div>
 
 <div style="float: right; width: 35%;">
-```{r, out.width = "60%", fig.align = 'center'}
-include_graphics(c("TPbreak.jpeg"))
-```
+<img src="TPbreak.jpeg" width="60%" style="display: block; margin: auto;" />
 
 
 <font size="2"><div align="right">[Currie & Cuddington, in prep]()</div></font>`
@@ -486,9 +448,7 @@ include_graphics(c("TPbreak.jpeg"))
 - very low densities
 </div>
 <div style="float: right; width: 70%;">
-```{r, out.width = "80%", fig.align = 'center'}
-include_graphics("zoobar.png")
-```
+<img src="zoobar.png" width="80%" style="display: block; margin: auto;" />
 <font size="2"><div align="center">[Currie & Cuddington, in prep]()</div></font>`
 </div>
 
@@ -500,9 +460,7 @@ include_graphics("zoobar.png")
 
 </div>
 <div style="float: right; width: 60%;">
-```{r, out.width = "50%",fig.show='hold',fig.align='center'}
-include_graphics(c("lightbreakwgt.jpeg" ))
-```
+<img src="lightbreakwgt.jpeg" width="50%" style="display: block; margin: auto;" />
 <font size="2"><div align="center">[Currie & Cuddington, in prep]()</div></font>`
 
 
@@ -515,9 +473,7 @@ include_graphics(c("lightbreakwgt.jpeg" ))
 
 </div>
 <div style="float: right; width: 60%;">
-```{r, out.width = "70%",fig.show='hold',fig.align='center'}
-include_graphics(c("lightgamApr11.jpeg", "gamresidlightApr05.jpeg" ))
-```
+<img src="lightgamApr11.jpeg" width="70%" style="display: block; margin: auto;" /><img src="gamresidlightApr05.jpeg" width="70%" style="display: block; margin: auto;" />
 <font size="2"><div align="center">[Currie & Cuddington, in prep]()</div></font>`
 
 
@@ -551,39 +507,10 @@ include_graphics(c("lightgamApr11.jpeg", "gamresidlightApr05.jpeg" ))
 
 # Case studies in connecting theory and data
 ## Moving from theory to prediction?
-```{r, warning=FALSE}
-library(DiagrammeR)
-mermaid("
-graph LR
-  A(observe)
-  B(theorize)
-  C(make predictions)
-  D(collect data)
-  E(test prediction 1)
-  G(test prediction 2)
-  H(test predition 3)
-  F(modify or reject current theory)
-  I(accept current theory)
-  
-  A-->B
-  B-->C
-  C-->D
-  D-->E
-  D-->G
-  D-->H
-  E-->|Reject| F
-  G-->|Reject|F
-  H-->|accept|I
-  F-->C
 
- style B fill:#B6E6E6;
- style C fill:#B6E6E6;
- style F fill:#B6E6E6;
- style I fill:#B6E6E6;
-")
-
-#subgraph <-transform_to_subgraph_ws(thdat[A,B])
-
+```{=html}
+<div id="htmlwidget-e095bcbd528d869656ec" style="width:720px;height:432px;" class="DiagrammeR html-widget"></div>
+<script type="application/json" data-for="htmlwidget-e095bcbd528d869656ec">{"x":{"diagram":"\ngraph LR\n  A(observe)\n  B(theorize)\n  C(make predictions)\n  D(collect data)\n  E(test prediction 1)\n  G(test prediction 2)\n  H(test predition 3)\n  F(modify or reject current theory)\n  I(accept current theory)\n  \n  A-->B\n  B-->C\n  C-->D\n  D-->E\n  D-->G\n  D-->H\n  E-->|Reject| F\n  G-->|Reject|F\n  H-->|accept|I\n  F-->C\n\n style B fill:#B6E6E6;\n style C fill:#B6E6E6;\n style F fill:#B6E6E6;\n style I fill:#B6E6E6;\n"},"evals":[],"jsHooks":[]}</script>
 ```
 
 ##
@@ -604,9 +531,7 @@ are most likely.
 
 
 
-```{r, out.width = "60%", fig.align = 'center'}
-include_graphics("https://imgs.xkcd.com/comics/how_it_works.png")
-```
+<img src="https://imgs.xkcd.com/comics/how_it_works.png" width="60%" style="display: block; margin: auto;" />
 <font size="2"><div align="center">https://xkcd.com/385/ </div></font>
 
 
@@ -643,13 +568,11 @@ Support for the development of online training materials comes from the Governme
 
 ## Why
 
-```{r, test, dev='png'}
-plot(1)
-```
+![](datatheory_files/figure-html/test-1.png)<!-- -->
 
 ## Second slide
 
-![](`r knitr::fig_chunk('test', 'png')`)
+![](datatheory_files/figure-html/test-1.png)
 
 ##
 <dev class="centered">
