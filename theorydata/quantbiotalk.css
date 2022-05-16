@@ -51,3 +51,10 @@ li {
   margin-top: 1px;
   margin-bottom: 1px
 }
+slide.title-slide {
+    background-image: url('environmental_modelling.jpg');
+    background-position: center top;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: 50% 50%;
+}
